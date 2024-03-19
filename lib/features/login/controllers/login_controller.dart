@@ -24,7 +24,7 @@ class LoginController extends GetxController {
         SaveLocalFunc().saveToken(res.data?.token ?? 'empty');
         DialogService.showDialogGeneral(
           content: const Text('Berhasil Login'),
-          barrierDismissible: true,
+          barrierDismissible: false,
         );
         Future.delayed(const Duration(seconds: 2), () {
           Get.offAllNamed(AppRoutes.checklistScreen);
