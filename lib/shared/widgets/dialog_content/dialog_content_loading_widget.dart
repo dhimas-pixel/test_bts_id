@@ -11,8 +11,8 @@ class DialogContentLoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PopScope(
-      canPop: barrierDismissible,
+    return WillPopScope(
+      onWillPop: () => Future.value(barrierDismissible),
       child: Center(
         child: SingleChildScrollView(
           child: Material(

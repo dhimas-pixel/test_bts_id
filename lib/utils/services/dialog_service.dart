@@ -38,8 +38,8 @@ class DialogService {
     String? dialogName,
   }) async {
     Get.dialog<T>(
-      PopScope(
-        canPop: barrierDismissible,
+      WillPopScope(
+        onWillPop: () => Future.value(barrierDismissible),
         child: Center(
           child: SingleChildScrollView(
             physics: physics,
